@@ -25,9 +25,20 @@ public class VmsController {
 
     @GetMapping("testResponse")
     public ResponseEntity<Result> testRes(){
-        Result res = new Result("Good Thing!");
+        Result res = new Result("Good Thing!",0);
         return ResponseEntity.ok(res);
     }
 
+    @GetMapping("normal")
+    public ResponseEntity<Result> normal(){
+        Result res = new Result();
+        return ResponseEntity.ok(res);
+    }
 
+    @GetMapping("dataJson")
+    public ResponseEntity<Result> dataJson(){
+        Result res = new Result();
+        res.putData("egg","10");
+        return ResponseEntity.ok(res);
+    }
 }
